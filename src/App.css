@@ -1,0 +1,82 @@
+.container {
+  @apply py-sm
+}
+
+.box {
+  @apply p-xs border bg-primary-white text-primary-black border-primary-gray flex gap-xs rounded shadow-sm
+}
+
+.box-col {
+  @apply flex-col
+}
+
+.box>h2, .box>h3 {
+  @apply text-lg font-semibold
+}
+
+.btn {
+  @apply py-xxs px-xxs rounded duration-300
+}
+
+.btn-red {
+  @apply bg-primary-red text-primary-white border border-primary-red hover:bg-secondary-red disabled:bg-secondary-red
+}
+
+.btn-transparent {
+  @apply bg-primary-white text-primary-black border border-primary-gray hover:bg-primary-black hover:text-white disabled:bg-primary-gray hover:border-black
+}
+
+.btn-black {
+  @apply bg-primary-black text-primary-white border border-primary-black hover:bg-secondary-black hover:text-white disabled:bg-secondary-gray hover:border-secondary-black
+}
+
+.form-control {
+  @apply w-full py-xxs px-xxs bg-primary-white text-primary-black border border-primary-gray rounded focus:outline-none
+}
+
+input[type="radio"] {
+  @apply accent-primary-red size-4 cursor-pointer disabled:cursor-auto
+}
+
+form {
+  @apply flex flex-col gap-xxs
+}
+
+.text {
+  @apply text-sm
+}
+
+.title {
+  @apply text-primary-red font-semibold text-lg relative w-fit pl-sm
+}
+
+.title::before {
+  content: '';
+  @apply w-xs h-full bg-primary-red absolute left-0 top-0 rounded
+}
+
+.image-container {
+  @apply overflow-hidden rounded
+}
+
+p {
+  line-height: 1.6;
+}
+
+img {
+  @apply rounded
+}
+
+.active {
+  @apply text-primary-red
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 1rem !important;
+}
+
+h1::after {
+  content: '.';
+  @apply text-primary-red
+}

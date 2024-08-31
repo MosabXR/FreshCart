@@ -1,0 +1,25 @@
+import baseURL from "./BaseURL";
+import token from "./UserToken";
+import axios from "axios";
+
+const getUserCartAPI = async () => {
+    const { data } = await axios.get(`${baseURL}/cart`, { headers: { token } });
+    return data;
+}
+
+const addProductToCartAPI = async productId => {
+    const { data } = await axios.post(`${baseURL}/cart`, { productId }, { headers: { token } });
+    return data;
+}
+
+const updateCartProductQuantityAPI = async (productId, count) => {
+    const { data } = await axios.put(`${baseURL}/cart/${productId}`, { count }, { headers: { token } });
+    return data;
+}
+
+const removeCartItemAPI = async (productId) => {
+    const { data } = await axios.delete(`${baseURL}/cart/${productId}`, { headers: { token } });
+    return data;
+}
+
+export { getUserCartAPI, addProductToCartAPI, updateCartProductQuantityAPI, removeCartItemAPI }
