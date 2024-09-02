@@ -24,7 +24,7 @@ export default function CartItem({ product, fn }) {
 
     const updateCartProductQuantity = async (quantity) => {
         try {
-            const { data } = await updateCartProductQuantityAPI(productItem.id, quantity)
+            const { data } = await updateCartProductQuantityAPI(productItem.id, quantity, localStorage.getItem('userToken'))
             fn()
         } catch (error) {
             console.log(error);
@@ -34,7 +34,7 @@ export default function CartItem({ product, fn }) {
     const removeCartItem = async (quantity) => {
         setLoading(true)
         try {
-            const { data } = await removeCartItemAPI(productItem.id)
+            const { data } = await removeCartItemAPI(productItem.id,localStorage.getItem('userToken'))
             fn()
             setLoading(false)
             notify = toast.success('Removed successfully');
