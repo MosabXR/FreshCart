@@ -24,7 +24,7 @@ export default function Wishlist() {
     const getLoggedUserWishlist = async () => {
         setLoading(true)
         try {
-            const { data } = await getUserWishlistAPI();
+            const { data } = await getUserWishlistAPI(localStorage.getItem('userToken'));
             setWishlist(data)
             setLoading(false);
         } catch (error) {
