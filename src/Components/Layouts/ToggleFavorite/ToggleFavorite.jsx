@@ -30,7 +30,7 @@ export default function ToggleFavorite({ productId, color, favorite, fn }) {
     const addProductToWishlist = async productId => {
         setLoading(true);
         try {
-            const { data } = await addProductToWishlistAPI(productId)
+            const { data } = await addProductToWishlistAPI(productId,localStorage.getItem('userToken'))
             setLoading(false);
             notify = toast.success('Added wishlist')
         } catch (error) {
@@ -44,7 +44,7 @@ export default function ToggleFavorite({ productId, color, favorite, fn }) {
     const removeProductFromWishlist = async productId => {
         setLoading(true);
         try {
-            const { data } = await removeProductFromWishlistAPI(productId)
+            const { data } = await removeProductFromWishlistAPI(productId,localStorage.getItem('userToken'))
             setLoading(false);
             fn()
             notify = toast.success('Removed from wishlist')
