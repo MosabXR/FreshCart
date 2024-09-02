@@ -1,8 +1,7 @@
 import baseURL from "./BaseURL";
-import token from "./UserToken";
 import axios from "axios";
 
-const getUserCartAPI = async () => {
+const getUserCartAPI = async (token) => {
     const { data } = await axios.get(`${baseURL}/cart`, { headers: { token } });
     return data;
 }
