@@ -28,7 +28,7 @@ export default function Cart() {
     const getLoggedUserCart = async () => {
         setLoading(true)
         try {
-            const cartDataAPI = await getUserCartAPI();
+            const cartDataAPI = await getUserCartAPI(localStorage.getItem('userToken'));
             const moreCartDataAPI = cartDataAPI.data;
             const cartProducts = moreCartDataAPI.products;
             setCartData(cartDataAPI);
