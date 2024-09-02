@@ -7,17 +7,17 @@ const getUserCartAPI = async () => {
     return data;
 }
 
-const addProductToCartAPI = async productId => {
+const addProductToCartAPI = async (productId, token) => {
     const { data } = await axios.post(`${baseURL}/cart`, { productId }, { headers: { token } });
     return data;
 }
 
-const updateCartProductQuantityAPI = async (productId, count) => {
+const updateCartProductQuantityAPI = async (productId, count, token) => {
     const { data } = await axios.put(`${baseURL}/cart/${productId}`, { count }, { headers: { token } });
     return data;
 }
 
-const removeCartItemAPI = async (productId) => {
+const removeCartItemAPI = async (productId, token) => {
     const { data } = await axios.delete(`${baseURL}/cart/${productId}`, { headers: { token } });
     return data;
 }
